@@ -14,7 +14,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minLength: 6,
+    minLength: 6, 
   },
   bookings: [{ type: mongoose.Types.ObjectId,
      ref: "Booking" }],

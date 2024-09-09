@@ -1,6 +1,6 @@
-import User from "../models/User";
- import bcrypt from "bcryptjs";
-// import Bookings from "../models/Bookings";
+import User from "../models/User.js";
+import bcrypt from "bcryptjs";
+import Bookings from "../models/Bookings.js";
 export const getAllUsers = async (req, res, next) => {
   let users;
   try {
@@ -16,16 +16,12 @@ export const getAllUsers = async (req, res, next) => {
 
 export const singup = async (req, res, next) => {
   const { name, email, password } = req.body;
-  if (
-    !name &&
-    name.trim() === "" &&
-    !email &&
-    email.trim() === "" &&
-    !password &&
-    password.trim() === ""
-  ) {
+
+  if (!name || !name.trim() || !email || !email.trim() || !password || !password.trim()) {
     return res.status(422).json({ message: "Invalid Inputs" });
   }
+  
+
   const hashedPassword = bcrypt.hashSync(password);
   let user;
   try {

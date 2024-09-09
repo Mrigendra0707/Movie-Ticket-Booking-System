@@ -1,4 +1,4 @@
-import Admin from "../models/Admin";
+import Admin from "../models/Admin.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -35,7 +35,7 @@ export const addAdmin = async (req, res, next) => {
 
 export const adminLogin = async (req, res, next) => {
   const { email, password } = req.body;
-  if (!email && email.trim() === "" && !password && password.trim() === "") {
+  if (!email && email.trim() === "" || !password || password.trim() === "") {
     return res.status(422).json({ message: "Invalid Inputs" });
   }
   let existingAdmin;

@@ -1,40 +1,38 @@
+
 import mongoose from "mongoose";
-import Bookings from "../models/Bookings";
-import Movie from "../models/Movie";
-import User from "../models/User";
+import Bookings from "../models/Bookings.js";
+import Movie from "../models/Movie.js";
+import User from "../models/User.js";
 
 export const newBooking = async (req, res, next) => {
   const { movie, date, seatNumber, user } = req.body;
 
-  // if (!mongoose.Types.ObjectId.isValid(movie) || !mongoose.Types.ObjectId.isValid(user)) {
-  //   return res.status(400).json({ message: "Invalid movie or user ID" });
-  // }
-
   let existingMovie;
   let existingUser;
-  // let booking;
-  try {
 
-       existingMovie = await Movie.findById(movie);
+  try {
+    existingMovie = await Movie.findById(movie);
     existingUser = await User.findById(user);
- 
-    // booking=new Bookings(
-    //   {
-    //     movie,
-    //     date:new Date(`${date}`,seatNumber,user),
-    //   }
-    // )
-  // booking=await booking.save();  
-} catch (err) {
+  } catch (err) {
     return console.log(err);
   }
+
   if (!existingMovie) {
-    return res.status(404).json({ message: "Movie not found with given id" });
+    return res.status(404).json({ message: "Movie not found with the given ID" });
   }
   if (!existingUser) {
-    return res.status(404).json({ message: "User not found with given ID " });
+    return res.status(404).json({ message: "User not found with the given ID" });
   }
-   let booking;
+
+  // Ensure bookings arrays are initialized
+  if (!existingUser.bookings) {
+    existingUser.bookings = [];
+  }
+  if (!existingMovie.bookings) {
+    existingMovie.bookings = [];
+  }
+
+  let booking;
 
   try {
     booking = new Bookings({
@@ -43,14 +41,18 @@ export const newBooking = async (req, res, next) => {
       seatNumber,
       user,
     });
+
     const session = await mongoose.startSession();
     session.startTransaction();
+
     existingUser.bookings.push(booking);
     existingMovie.bookings.push(booking);
+
     await existingUser.save({ session });
     await existingMovie.save({ session });
     await booking.save({ session });
-    session.commitTransaction();
+
+    await session.commitTransaction();
   } catch (err) {
     return console.log(err);
   }
@@ -59,8 +61,9 @@ export const newBooking = async (req, res, next) => {
     return res.status(500).json({ message: "Unable to create a booking" });
   }
 
-  return res.status(201).json({ booking});
+  return res.status(201).json({ booking });
 };
+
 
 export const getBookingById = async (req, res, next) => {
   const id = req.params.id;
@@ -97,3 +100,4 @@ export const deleteBooking = async (req, res, next) => {
   }
   return res.status(200).json({ message: "Successfully Deleted" });
 };
+

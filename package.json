@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@mui/icons-material": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.3"
+  },
+  "name": "fullstack-movie-booking-app",
+  "description": "![front part of app](https://github.com/Akash-298/fullstack-movie-booking-app/assets/105929312/9787ee17-78b8-40e7-9b60-7126d9e1e895)\r ![Screenshot 2023-09-27 084227](https://github.com/Akash-298/fullstack-movie-booking-app/assets/105929312/5e144d98-b221-4ce8-a2ba-1b09bf61233b)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
