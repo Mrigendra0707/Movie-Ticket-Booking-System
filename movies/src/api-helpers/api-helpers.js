@@ -1,12 +1,10 @@
-
-
 import axios from "axios";
 
 // Function to get all movies
 export const getAllMovies = async () => {
   const res = await axios.get("/movie").catch((err) => console.log(err));
 
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("No Data");
   }
 
@@ -24,11 +22,11 @@ export const sendUserAuthRequest = async (data, signup) => {
     })
     .catch((err) => console.log(err));
 
-  if (res.status !== 200 && res.status !== 201) {
+  if (!res || (res.status !== 200 && res.status !== 201)) {
     console.log("Unexpected Error Occurred");
   }
 
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -41,21 +39,21 @@ export const sendAdminAuthRequest = async (data) => {
     })
     .catch((err) => console.log(err));
 
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("Unexpected Error");
   }
 
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
 // Function to get movie details by ID
 export const getMovieDetails = async (id) => {
   const res = await axios.get(`/movie/${id}`).catch((err) => console.log(err));
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("Unexpected Error");
   }
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -70,10 +68,10 @@ export const newBooking = async (data) => {
     })
     .catch((err) => console.log(err));
 
-  if (res.status !== 201) {
+  if (!res || res.status !== 201) {
     return console.log("Unexpected Error");
   }
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -84,10 +82,10 @@ export const getUserBooking = async () => {
     .get(`/user/bookings/${id}`)
     .catch((err) => console.log(err));
 
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("Unexpected Error");
   }
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -97,11 +95,11 @@ export const deleteBooking = async (id) => {
     .delete(`/booking/${id}`)
     .catch((err) => console.log(err));
 
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("Unexpected Error");
   }
 
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -109,10 +107,10 @@ export const deleteBooking = async (id) => {
 export const getUserDetails = async () => {
   const id = localStorage.getItem("userId");
   const res = await axios.get(`/user/${id}`).catch((err) => console.log(err));
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("Unexpected Error");
   }
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -126,10 +124,11 @@ export const addMovie = async (data) => {
         description: data.description,
         releaseDate: data.releaseDate,
         posterUrl: data.posterUrl,
-        trailerUrl: data.trailerUrl,   // Add this field
+        trailerUrl: data.trailerUrl, // Add this field
         featured: data.featured,
         actors: data.actors,
         admin: localStorage.getItem("adminId"),
+        seatLayout: data.seatLayout || [], // Add seat layout for the movie
       },
       {
         headers: {
@@ -137,13 +136,13 @@ export const addMovie = async (data) => {
         },
       }
     )
-    .catch((err) => console.log(err));
+    .catch((err) => alert(err));
 
-  if (res.status !== 201) {
-    return console.log("Unexpected Error Occurred");
+  if (!res || res.status !== 201) {
+    return alert("Unexpected Error Occurred");
   }
 
-  const resData = await res.data;
+  const resData = await res?.data;
   return resData;
 };
 
@@ -154,10 +153,38 @@ export const getAdminById = async () => {
     .get(`/admin/${adminId}`)
     .catch((err) => console.log(err));
 
-  if (res.status !== 200) {
+  if (!res || res.status !== 200) {
     return console.log("Unexpected Error Occurred");
   }
 
-  const resData = await res.data;
+  const resData = await res?.data;
+  return resData;
+};
+
+// Function to get seat layout for a specific movie
+export const getSeatLayout = async (movieId) => {
+  const res = await axios
+    .get(`/movie/${movieId}/seats`)
+    .catch((err) => console.log(err));
+
+  if (!res || res.status !== 200) {
+    return console.log("Unexpected Error Occurred");
+  }
+
+  const resData = await res?.data;
+  return resData;
+};
+
+// Function to update seat status (mark a seat as booked)
+export const updateSeatStatus = async (movieId, seatNumber) => {
+  const res = await axios
+    .patch(`/movie/${movieId}/seats`, { seatNumber })
+    .catch((err) => console.log(err));
+
+  if (!res || res.status !== 200) {
+    return console.log("Unexpected Error Occurred");
+  }
+
+  const resData = await res?.data;
   return resData;
 };
