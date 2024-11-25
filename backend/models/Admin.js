@@ -1,31 +1,23 @@
 import mongoose from "mongoose";
 
-const bookingSchema = new mongoose.Schema({
-  movie: {
-    type: mongoose.Types.ObjectId,
-    ref: "Movie",
+const adminSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    unique: true,
     required: true,
   },
-  date: {
-    type: Date,
+  password: {
+    type: String,
     required: true,
+    minLength: 6,
   },
-  seatNumber: {
-    type: String, // Changed to String to match "A1", "B1", etc.
-    required: true,
-    validate: {
-      validator: function (seat) {
-        // Regex to validate alphanumeric seat numbers (e.g., A1, B10)
-        return /^[A-Z]\d{1,2}$/.test(seat);
-      },
-      message: (props) => ${props.value} is not a valid seat number!,
+  addedMovies: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref:"Movie",
+      
     },
-  },
-  user: {
-    type: mongoose.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
+  ],
 });
 
-export default mongoose.model("Booking", bookingSchema);
+export default mongoose.model("Admin", adminSchema);
