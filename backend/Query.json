@@ -1,0 +1,177 @@
+[
+  {
+    "Question": "What is this platform?",
+    "Answer": "It is a reliable online system to book movie tickets and view seating arrangements.",
+    "AskedFreq": 1
+  },
+  {
+    "Question": "How does this system benefit moviegoers?",
+    "Answer": "It allows users to conveniently browse movies, check showtimes, and book tickets online.",
+    "AskedFreq": 1
+  },
+  {
+    "Question": "Can I select my seats during booking?",
+    "Answer": "Yes, you can choose your preferred seats from the seating layout while booking.",
+    "AskedFreq": 15
+  },
+  {
+    "Question": "Are upcoming movies listed on the platform?",
+    "Answer": "Yes, you can find details about upcoming movies and their release dates.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I cancel my booking?",
+    "Answer": "Yes, ticket cancellation options are available, subject to the terms and conditions.",
+    "AskedFreq": 12
+  },
+  {
+    "Question": "Is this platform available nationwide?",
+    "Answer": "Yes, the platform supports theaters in multiple cities across the country.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "How do I book movie tickets?",
+    "Answer": "Select a movie, choose your preferred showtime, pick seats, and proceed to payment.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I book tickets for multiple movies at once?",
+    "Answer": "Currently, you can book tickets for one movie at a time.",
+    "AskedFreq": 2
+  },
+  {
+    "Question": "Are there any discounts available on movie tickets?",
+    "Answer": "Yes, discounts and offers may be available during promotional periods or through partnered payment methods.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I view movie trailers on the platform?",
+    "Answer": "Yes, trailers are available to help you decide on a movie before booking.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Is there a rating system for movies?",
+    "Answer": "Yes, you can view ratings and reviews for movies to help you make informed decisions.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I check showtimes for different theaters?",
+    "Answer": "Yes, the platform displays showtimes for multiple theaters in your city.",
+    "AskedFreq": 1
+  },
+  {
+    "Question": "Can I reschedule my ticket booking?",
+    "Answer": "Rescheduling is currently not available. You may need to cancel and rebook.",
+    "AskedFreq": 10
+  },
+  {
+    "Question": "Are snacks and beverages available during booking?",
+    "Answer": "Yes, you can pre-order snacks and beverages along with your tickets in select theaters.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I book tickets for someone else?",
+    "Answer": "Yes, you can book tickets on behalf of others by entering their details during the booking process.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "How secure is the payment process?",
+    "Answer": "The platform uses secure payment gateways to ensure safe transactions.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I book tickets for a group?",
+    "Answer": "Yes, group bookings are supported, and you can select multiple seats during the booking process.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "How can I contact customer support?",
+    "Answer": "You can reach customer support through the platform's help section for any queries or assistance.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Do I need to create an account to book tickets?",
+    "Answer": "Yes, creating an account helps you manage bookings and access other features.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I view seat availability in real-time?",
+    "Answer": "Yes, the seating layout shows real-time availability of seats.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Is this platform available as a mobile app?",
+    "Answer": "Yes, you can download the mobile app for a more convenient booking experience.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I gift movie tickets to someone?",
+    "Answer": "Yes, gift card options may be available for gifting movie tickets to others.",
+    "AskedFreq": 12
+  },
+  {
+    "Question": "Can I book tickets for 3D or IMAX movies?",
+    "Answer": "Yes, tickets for 3D, IMAX, and other special formats are available on the platform.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I track my bookings?",
+    "Answer": "Yes, you can view and track your bookings in the ‘My Bookings’ section of your account.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I buy tickets for upcoming shows in advance?",
+    "Answer": "Yes, advance booking is supported for most movies and showtimes.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I filter movies based on genres?",
+    "Answer": "Yes, you can filter movies by genres such as action, comedy, drama, etc.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Are there family packages available for booking?",
+    "Answer": "Yes, some theaters offer family packages, which can be selected during booking.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "How do I leave feedback for a movie or theater?",
+    "Answer": "You can leave feedback after watching the movie through the platform’s review section.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Who developed this platform?",
+    "Answer": "Manish Yadav & his team members naming Mrigendra,Shayanur,Krishna and Palak",
+    "AskedFreq": 9
+  },
+  {
+    "Question": "Who inspired the development of this platform?",
+    "Answer": "Our mentors provided the inspiration for developing this platform.",
+    "AskedFreq": 10
+  },
+  {
+    "Question": "Who are the members of this team?",
+    "Answer": "Manish Yadav and team.",
+    "AskedFreq": 1
+  },
+  {
+    "Question": "Are there notifications for new movie releases?",
+    "Answer": "Yes, you can subscribe to notifications to stay updated about new movie releases and offers.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "What happens if a movie show gets canceled?",
+    "Answer": "If a show is canceled, the platform will notify you and process a refund as per the policy.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I get recommendations for movies?",
+    "Answer": "Yes, the platform provides movie recommendations based on your preferences and past bookings.",
+    "AskedFreq": 0
+  },
+  {
+    "Question": "Can I search for movies in other cities?",
+    "Answer": "Yes, you can search for movies and showtimes in other cities by changing the location setting.",
+    "AskedFreq": 0
+  }
+]
