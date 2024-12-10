@@ -1,0 +1,39 @@
+/* Style for the OrderList component */
+.order-list-container {
+    padding: 20px;
+  }
+  
+  .order-list-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .order-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-item {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  .order-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .order-item p {
+    margin: 5px 0;
+  }
+  
+  .order-item ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-item li {
+    margin: 5px 0;
+  }
+  
