@@ -188,3 +188,43 @@ export const updateSeatStatus = async (movieId, seatNumber) => {
   const resData = await res?.data;
   return resData;
 };
+
+// Food Ordering System
+
+// Function to get all available food items
+export const getFoodItems = async () => {
+  const res = await axios.get("/food").catch((err) => console.log(err));
+
+  if (!res || res.status !== 200) {
+    return console.log("Error fetching food items");
+  }
+
+  const foodData = await res?.data;
+  return foodData;
+};
+
+// Function to place an order for food
+export const placeFoodOrder = async (seat, items) => {
+  const res = await axios
+    .post("/food/order", { seat, items })
+    .catch((err) => console.log(err));
+
+  if (!res || res.status !== 201) {
+    return console.log("Error placing food order");
+  }
+
+  const orderData = await res?.data;
+  return orderData;
+};
+
+// Function to get all food orders (admin side)
+export const getFoodOrders = async () => {
+  const res = await axios.get("/food/orders").catch((err) => console.log(err));
+
+  if (!res || res.status !== 200) {
+    return console.log("Error fetching food orders");
+  }
+
+  const ordersData = await res?.data;
+  return ordersData;
+};
